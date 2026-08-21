@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de BERRADA Adam — Ingénieur junior Systèmes Embarqués & IoT, élève-ingénieur à Centrale Méditerranée." />
+  <title>BERRADA Adam · Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ========================================================
+     NAVIGATION
+     ======================================================== -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">BERRADA <span>Adam</span></span>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#experience">Expériences</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#education">Formation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- ========================================================
+     HERO
+     ======================================================== -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Ingénieur embarqué & IoT</span>
+      <h1 class="hero-name">BERRADA <span>Adam</span></h1>
+      <p class="hero-title">Élève-ingénieur en alternance · Centrale Méditerranée · Aix-en-Provence</p>
+      <div class="hero-badges">
+        <span class="badge">Systèmes Embarqués</span>
+        <span class="badge">IoT &amp; Objets Connectés</span>
+        <span class="badge">Edge AI / TinyML</span>
+        <span class="badge">STM32 · Arduino</span>
+        <span class="badge">DevOps &amp; Cloud</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">Voir les projets →</a>
+        <a href="#contact" class="btn btn-outline">Me contacter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     ABOUT
+     ======================================================== -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Profil</p>
+      <h2 class="section-title">À <span>propos</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Ingénieur junior passionné par les <strong>systèmes embarqués</strong>, l'<strong>IoT</strong> et
+          l'<strong>intelligence artificielle embarquée (Edge AI)</strong>, je suis actuellement
+          élève-ingénieur en alternance à <strong>Centrale Méditerranée</strong> (diplôme 2026).
+        </p>
+        <p>
+          Mon parcours mêle conception hardware bas-niveau (STM32, capteurs, RFID, LoRa),
+          développement firmware en C/C++ et MicroPython, et déploiement de pipelines IoT
+          sécurisés avec Docker, MQTT et PostgreSQL HA.
+        </p>
+        <p>
+          J'ai contribué à des projets distingués par <em>Centrale Méditerranée</em> et
+          <em>STMicroelectronics</em>, et je travaille actuellement chez <strong>LOCACOEUR</strong>
+          sur la sécurisation d'une flotte Medtech connectée.
+        </p>
+      </div>
+      <div>
+        <div class="about-stats">
+          <div class="stat-card"><div class="num">3+</div><div class="label">Projets primés</div></div>
+          <div class="stat-card"><div class="num">2</div><div class="label">Ans d'expérience pro</div></div>
+          <div class="stat-card"><div class="num">STM32</div><div class="label">Cœur de cible</div></div>
+          <div class="stat-card"><div class="num">FR · EN</div><div class="label">Bilingue (IELTS 8.0)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     SKILLS
+     ======================================================== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Expertise</p>
+      <h2 class="section-title">Compétences <span>techniques</span></h2>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-card-icon">⚙️</div>
+        <div class="skill-card-title">Systèmes Embarqués</div>
+        <div class="tag-list">
+          <span class="tag">STM32 / STM32H7</span>
+          <span class="tag">Arduino</span>
+          <span class="tag">MicroPython</span>
+          <span class="tag">C / C++</span>
+          <span class="tag">Nucleo</span>
+          <span class="tag">FPGA (VHDL)</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon">📡</div>
+        <div class="skill-card-title">IoT &amp; Protocoles</div>
+        <div class="tag-list">
+          <span class="tag">MQTT / Mosquitto</span>
+          <span class="tag">I2C · UART · SPI</span>
+          <span class="tag">Ethernet</span>
+          <span class="tag">LoRa</span>
+          <span class="tag">RFID</span>
+          <span class="tag">GPS</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon">🤖</div>
+        <div class="skill-card-title">Edge AI / TinyML</div>
+        <div class="tag-list">
+          <span class="tag">PyTorch</span>
+          <span class="tag">X-Cube-AI</span>
+          <span class="tag">MobileNetV2</span>
+          <span class="tag">YOLO</span>
+          <span class="tag">CRNN-OCR</span>
+          <span class="tag">OpenCV</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon">🔧</div>
+        <div class="skill-card-title">Hardware &amp; Capteurs</div>
+        <div class="tag-list">
+          <span class="tag">Capteurs ToF</span>
+          <span class="tag">IMU</span>
+          <span class="tag">LCD</span>
+          <span class="tag">Moteurs Pas-à-Pas</span>
+          <span class="tag">Soudure CMS</span>
+          <span class="tag">Impression 3D (FDM/SLA)</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon">🐳</div>
+        <div class="skill-card-title">Backend &amp; DevOps</div>
+        <div class="tag-list">
+          <span class="tag">Docker</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">Python 3</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Django</span>
+          <span class="tag">PostgreSQL 16 HA</span>
+          <span class="tag">Nginx</span>
+          <span class="tag">Prometheus / Grafana</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon">🔒</div>
+        <div class="skill-card-title">Sécurité &amp; Qualité</div>
+        <div class="tag-list">
+          <span class="tag">Zero Trust</span>
+          <span class="tag">TLS 1.3 / mTLS</span>
+          <span class="tag">Tests unitaires</span>
+          <span class="tag">Store-and-Forward</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     EXPERIENCE
+     ======================================================== -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Parcours</p>
+      <h2 class="section-title">Expériences <span>professionnelles</span></h2>
+    </div>
+    <div class="timeline">
+
+      <!-- LOCACOEUR apprenticeship -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-period">Septembre 2025 – Présent</div>
+          <div class="timeline-role">Développeur Backend &amp; IoT — Apprenti Ingénieur</div>
+          <div class="timeline-org">LOCACOEUR · Aix-en-Provence — Leader régional location/surveillance DAE (Medtech)</div>
+          <div class="timeline-desc">
+            <p>R&amp;D IoT &amp; Télémétrie embarquée : sécurisation et supervision d'une flotte d'objets connectés médicaux.</p>
+            <ul>
+              <li><strong>Pipeline MQTT &amp; Zero Trust</strong> : ingestion MQTT + architecture Zero Trust avec chiffrement TLS 1.3 / mTLS.</li>
+              <li><strong>Données &amp; HA</strong> : administration PostgreSQL 16 HA, mécanisme Store-and-Forward, automatisation workflows logistiques par IA.</li>
+              <li><strong>Data consolidation</strong> : extraction et enrichissement de bases clients par web scraping + IA.</li>
+            </ul>
+          </div>
+          <div class="stack">
+            <span class="tag">Python 3</span><span class="tag">Mosquitto MQTT</span>
+            <span class="tag">PostgreSQL 16 HA</span><span class="tag">Docker</span>
+            <span class="tag">Nginx</span><span class="tag">Linux Ubuntu</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCACOEUR stage -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-period">Juin 2025 – Août 2025</div>
+          <div class="timeline-role">Stagiaire Ingénieur Logiciel</div>
+          <div class="timeline-org">LOCACOEUR · Aix-en-Provence</div>
+          <div class="timeline-desc">
+            <p>Refonte du CRM, correction de bugs critiques et automatisation de la validation de bases de données.</p>
+            <ul>
+              <li><strong>CRM &amp; Kanban</strong> : correction de 28 bugs critiques, module de gestion Kanban pour la coordination interne.</li>
+              <li><strong>Outils data</strong> : automatisation Python/Gradio, outil de prospection intégrant la base nationale Géo DAE.</li>
+            </ul>
+          </div>
+          <div class="stack">
+            <span class="tag">Python</span><span class="tag">Deluge / ZML</span>
+            <span class="tag">Pandas</span><span class="tag">Zoho Creator</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GUINTOLLI -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-period">Juillet 2024 – Août 2024</div>
+          <div class="timeline-role">Ouvrier de Chantier</div>
+          <div class="timeline-org">GUINTOLLI · Marseille</div>
+          <div class="timeline-desc">
+            <p>Participation à des chantiers industriels — coordination et respect des normes de sécurité en environnement à risques.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     PROJECTS
+     ======================================================== -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Réalisations</p>
+      <h2 class="section-title">Projets <span>phares</span></h2>
+    </div>
+
+    <p style="text-align:center;color:var(--muted);margin-bottom:2.5rem;font-size:.95rem;">Projets académiques &amp; personnels sélectionnés</p>
+
+    <div class="projects-grid">
+
+      <!-- Distributeur Médical -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">💊</span>
+          <span class="project-award">🏆 Prix Prototypage ECM</span>
+        </div>
+        <div class="project-sub">Centrale Méditerranée · 2026</div>
+        <div class="project-title">Distributeur Médical Connecté</div>
+        <div class="project-desc">
+          Distributeur synchronisé avec un serveur de prescription.
+          Architecture master/slave (STM32F7) via I2C/UART, connectivité
+          Ethernet/LoRa, validation chromatique des pilules par MicroPython,
+          moteurs pas-à-pas &amp; RFID.
+        </div>
+        <div class="tag-list">
+          <span class="tag">STM32F7</span><span class="tag">C/C++</span>
+          <span class="tag">MicroPython</span><span class="tag">LoRa</span>
+          <span class="tag">I2C · UART · SPI</span>
+        </div>
+      </div>
+
+      <!-- BoatVision -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🚢</span>
+          <span class="project-award">❤️ Coup de cœur STMicro</span>
+        </div>
+        <div class="project-sub">Centrale Méditerranée · 2025 · InnovGames STMicro</div>
+        <div class="project-title">BoatVision — Recherche Edge AI</div>
+        <div class="project-desc">
+          Étude comparative de modèles de vision embarquée pour la reconnaissance
+          navale sur matériel contraint. Benchmarks MobileNetV2 vs pipeline
+          YOLO + CRNN-OCR, optimisation latence/précision sur hardware limité.
+        </div>
+        <div class="tag-list">
+          <span class="tag">Edge AI</span><span class="tag">MobileNetV2</span>
+          <span class="tag">YOLO</span><span class="tag">CRNN-OCR</span>
+        </div>
+      </div>
+
+      <!-- FishDrone -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🤿</span>
+        </div>
+        <div class="project-sub">Centrale Méditerranée · 2024</div>
+        <div class="project-title">FishDrone — Drone de Surface Autonome</div>
+        <div class="project-desc">
+          Drone de surface autonome avec navigation par fusion de capteurs (ToF, GPS),
+          déploiement Edge AI (TinyML / X-Cube-AI) sur STM32H7,
+          modélisation hydrodynamique (SciPy) et interface de contrôle Node.js/Django.
+        </div>
+        <div class="tag-list">
+          <span class="tag">STM32H7</span><span class="tag">PyTorch</span>
+          <span class="tag">X-Cube-AI</span><span class="tag">Node.js</span>
+          <span class="tag">Django</span><span class="tag">OpenCV</span>
+        </div>
+      </div>
+
+      <!-- RC F1 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🏎️</span>
+        </div>
+        <div class="project-sub">Projet Personnel</div>
+        <div class="project-title">RC F1 — Télémétrie Embarquée</div>
+        <div class="project-desc">
+          Véhicule Formule 1 radiocommandé haute performance avec architecture
+          de télémétrie personnalisée, capteurs IMU pour la dynamique du châssis
+          et analyse de performance en temps réel.
+        </div>
+        <div class="tag-list">
+          <span class="tag">C/C++</span><span class="tag">IMU</span>
+          <span class="tag">Télémétrie</span>
+        </div>
+      </div>
+
+      <!-- Audio RT -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🎛️</span>
+        </div>
+        <div class="project-sub">Projet Personnel</div>
+        <div class="project-title">Système DJ Ultra-Low Latency</div>
+        <div class="project-desc">
+          Système de mixage DJ itinérant sur Raspberry Pi 5 : noyau Linux
+          «&nbsp;Ultra-Low Latency&nbsp;» personnalisé, configuration fine du scheduler
+          et des IRQs pour une interface Mixxx sans latence.
+        </div>
+        <div class="tag-list">
+          <span class="tag">Raspberry Pi 5</span><span class="tag">Linux Kernel</span>
+          <span class="tag">C/C++</span><span class="tag">Mixxx</span>
+        </div>
+      </div>
+
+      <!-- 3D Printing -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🖨️</span>
+        </div>
+        <div class="project-sub">Projet Personnel</div>
+        <div class="project-title">Prototypage &amp; Impression 3D</div>
+        <div class="project-desc">
+          Expertise en fabrication additive FDM et SLA appliquée au prototypage
+          mécanique : boîtiers électroniques, fixations de capteurs sur mesure,
+          pièces de haute précision avec Anycubic Slicer / Fusion 360.
+        </div>
+        <div class="tag-list">
+          <span class="tag">FDM / SLA</span><span class="tag">Fusion 360</span>
+          <span class="tag">AutoCAD</span><span class="tag">Anycubic Slicer</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     EDUCATION & ASSOCIATIONS
+     ======================================================== -->
+<section id="education">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Formation &amp; Associations</p>
+      <h2 class="section-title">Parcours <span>académique</span></h2>
+    </div>
+
+    <div class="edu-grid" style="margin-bottom:2.5rem;">
+      <div class="edu-card">
+        <div class="edu-period">2023 – 2026 (en cours)</div>
+        <div class="edu-title">Diplôme d'Ingénieur Généraliste</div>
+        <div class="edu-school">Centrale Méditerranée · Marseille</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-period">2021 – 2023</div>
+        <div class="edu-title">CPGE — Classes Préparatoires</div>
+        <div class="edu-school">Lycée du Parc · Lyon</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-period">2023</div>
+        <div class="edu-title">Certification MOOC Gestion de Projet</div>
+        <div class="edu-school">Tronc Commun GDP 22</div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:3rem;">
+      <p class="section-label">Engagement</p>
+      <h2 class="section-title">Activités <span>associatives</span></h2>
+    </div>
+
+    <div class="edu-grid" style="margin-bottom:2.5rem;">
+      <div class="edu-card">
+        <div class="edu-period">2024 – 2026</div>
+        <div class="edu-title">Vice-Président &amp; Directeur Technique</div>
+        <div class="edu-school">Fablab Marseille</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-period">2024 – 2025</div>
+        <div class="edu-title">Responsable Technique &amp; Matériel</div>
+        <div class="edu-school">Techno Pôle · Centrale Méditerranée</div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:3rem;">
+      <p class="section-label">Langues</p>
+      <h2 class="section-title">Compétences <span>linguistiques</span></h2>
+    </div>
+
+    <div class="lang-grid">
+      <div class="lang-card">
+        <div class="lang-flag">🇫🇷</div>
+        <div><div class="lang-name">Français</div><div class="lang-level">Langue maternelle</div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-flag">🇬🇧</div>
+        <div><div class="lang-name">Anglais</div><div class="lang-level">Professionnel · IELTS 8.0</div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-flag">🇸🇦</div>
+        <div><div class="lang-name">Arabe</div><div class="lang-level">Langue maternelle</div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-flag">🇯🇵</div>
+        <div><div class="lang-name">Japonais</div><div class="lang-level">Notions élémentaires</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================================
+     CONTACT
+     ======================================================== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Prenons <span>contact</span></h2>
+      <p style="color:var(--muted);margin-top:.8rem;font-size:.95rem;">
+        Disponible pour des opportunités en ingénierie embarquée, IoT et Edge AI.
+      </p>
+    </div>
+    <div class="contact-links">
+      <a href="https://github.com/pentademic" class="contact-link" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.57.1.78-.25.78-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.97 10.97 0 0 1 2.89-.39c.98 0 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.15v3.19c0 .31.21.67.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        GitHub
+      </a>
+      <a href="mailto:adam.berrada@centrale-med.fr" class="contact-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+      <a href="https://www.linkedin.com/in/adam-berrada" class="contact-link" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM6.89 20.45H3.78V9h3.11v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     FOOTER
+     ======================================================== -->
+<footer>
+  <p>© 2026 BERRADA Adam · <a href="https://github.com/pentademic/portfolio">pentademic/portfolio</a></p>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  document.getElementById('navToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  // Close nav on link click
+  document.querySelectorAll('.nav-links a').forEach(a =>
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))
+  );
+</script>
+
+</body>
+</html>

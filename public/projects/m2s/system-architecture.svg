@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Architecture distribuée M2S</title>
+  <desc id="desc">Un nœud maître STM32F746G-DISCO coordonne la vision, les nœuds de distribution, le RFID et les liaisons externes.</desc>
+  <rect width="1600" height="900" fill="#f4f0e8"/>
+  <text x="110" y="112" fill="#152123" font-family="Georgia, serif" font-size="54">Architecture distribuée M2S</text>
+  <text x="110" y="160" fill="#596462" font-family="Arial, sans-serif" font-size="24">Séparation des responsabilités sur plusieurs cartes STM32</text>
+
+  <rect x="110" y="280" width="420" height="260" fill="#fffdf8" stroke="#152123" stroke-width="3"/>
+  <rect x="110" y="280" width="14" height="260" fill="#c55432"/>
+  <text x="158" y="342" fill="#0d5c63" font-family="Arial, sans-serif" font-size="22" font-weight="700">NŒUD MAÎTRE</text>
+  <text x="158" y="402" fill="#152123" font-family="Georgia, serif" font-size="38">STM32F746G-DISCO</text>
+  <text x="158" y="455" fill="#596462" font-family="Arial, sans-serif" font-size="25">Orchestration</text>
+  <text x="158" y="495" fill="#596462" font-family="Arial, sans-serif" font-size="25">Interface et identification RFID</text>
+
+  <rect x="650" y="235" width="360" height="220" fill="#fffdf8" stroke="#152123" stroke-width="3"/>
+  <text x="698" y="300" fill="#0d5c63" font-family="Arial, sans-serif" font-size="22" font-weight="700">VISION</text>
+  <text x="698" y="356" fill="#152123" font-family="Georgia, serif" font-size="34">NUCLEO-F767ZI</text>
+  <text x="698" y="407" fill="#596462" font-family="Arial, sans-serif" font-size="24">Caméra et contrôle visuel</text>
+
+  <rect x="650" y="525" width="360" height="220" fill="#fffdf8" stroke="#152123" stroke-width="3"/>
+  <text x="698" y="590" fill="#0d5c63" font-family="Arial, sans-serif" font-size="22" font-weight="700">DISTRIBUTION</text>
+  <text x="698" y="646" fill="#152123" font-family="Georgia, serif" font-size="34">NUCLEO-G431RB</text>
+  <text x="698" y="697" fill="#596462" font-family="Arial, sans-serif" font-size="24">Actionneurs et modules RFID</text>
+
+  <rect x="1130" y="335" width="350" height="270" fill="#0d5c63"/>
+  <text x="1180" y="405" fill="#fffdf8" font-family="Arial, sans-serif" font-size="22" font-weight="700">LIAISONS EXTERNES</text>
+  <text x="1180" y="470" fill="#fffdf8" font-family="Georgia, serif" font-size="34">LoRa et Ethernet</text>
+  <text x="1180" y="522" fill="#c8d4d1" font-family="Arial, sans-serif" font-size="24">Suivi Python</text>
+  <text x="1180" y="562" fill="#c8d4d1" font-family="Arial, sans-serif" font-size="24">Traçabilité des opérations</text>
+
+  <path d="M530 365H650" stroke="#c55432" stroke-width="6"/>
+  <path d="M620 347l30 18-30 18" fill="#c55432"/>
+  <path d="M530 475H590V635H650" fill="none" stroke="#c55432" stroke-width="6"/>
+  <path d="M620 617l30 18-30 18" fill="#c55432"/>
+  <path d="M1010 455H1130" stroke="#c55432" stroke-width="6"/>
+  <path d="M1100 437l30 18-30 18" fill="#c55432"/>
+  <text x="548" y="334" fill="#596462" font-family="Arial, sans-serif" font-size="20">Bus cartes</text>
+  <text x="1028" y="430" fill="#596462" font-family="Arial, sans-serif" font-size="20">Données</text>
+</svg>

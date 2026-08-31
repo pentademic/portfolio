@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Séquence de vérification M2S</title>
+  <desc id="desc">Le parcours associe identification RFID, distribution, capture visuelle, vérification et validation.</desc>
+  <rect width="1600" height="900" fill="#fffdf8"/>
+  <text x="110" y="116" fill="#152123" font-family="Georgia, serif" font-size="54">Séquence de vérification</text>
+  <text x="110" y="164" fill="#596462" font-family="Arial, sans-serif" font-size="24">Du badge RFID à la validation de la distribution</text>
+
+  <path d="M235 445H1365" stroke="#c9c1b4" stroke-width="4"/>
+  <circle cx="240" cy="445" r="76" fill="#0d5c63"/>
+  <circle cx="520" cy="445" r="76" fill="#f4f0e8" stroke="#152123" stroke-width="3"/>
+  <circle cx="800" cy="445" r="76" fill="#f4f0e8" stroke="#152123" stroke-width="3"/>
+  <circle cx="1080" cy="445" r="76" fill="#f4f0e8" stroke="#152123" stroke-width="3"/>
+  <circle cx="1360" cy="445" r="76" fill="#c55432"/>
+
+  <text x="240" y="460" text-anchor="middle" fill="#fffdf8" font-family="Georgia, serif" font-size="42">01</text>
+  <text x="520" y="460" text-anchor="middle" fill="#152123" font-family="Georgia, serif" font-size="42">02</text>
+  <text x="800" y="460" text-anchor="middle" fill="#152123" font-family="Georgia, serif" font-size="42">03</text>
+  <text x="1080" y="460" text-anchor="middle" fill="#152123" font-family="Georgia, serif" font-size="42">04</text>
+  <text x="1360" y="460" text-anchor="middle" fill="#fffdf8" font-family="Georgia, serif" font-size="42">05</text>
+
+  <text x="240" y="582" text-anchor="middle" fill="#152123" font-family="Arial, sans-serif" font-size="26" font-weight="700">Identification</text>
+  <text x="240" y="618" text-anchor="middle" fill="#596462" font-family="Arial, sans-serif" font-size="22">Badge RFID</text>
+  <text x="520" y="582" text-anchor="middle" fill="#152123" font-family="Arial, sans-serif" font-size="26" font-weight="700">Distribution</text>
+  <text x="520" y="618" text-anchor="middle" fill="#596462" font-family="Arial, sans-serif" font-size="22">Actionneur dédié</text>
+  <text x="800" y="582" text-anchor="middle" fill="#152123" font-family="Arial, sans-serif" font-size="26" font-weight="700">Capture</text>
+  <text x="800" y="618" text-anchor="middle" fill="#596462" font-family="Arial, sans-serif" font-size="22">Caméra embarquée</text>
+  <text x="1080" y="582" text-anchor="middle" fill="#152123" font-family="Arial, sans-serif" font-size="26" font-weight="700">Vérification</text>
+  <text x="1080" y="618" text-anchor="middle" fill="#596462" font-family="Arial, sans-serif" font-size="22">Contrôle visuel</text>
+  <text x="1360" y="582" text-anchor="middle" fill="#152123" font-family="Arial, sans-serif" font-size="26" font-weight="700">Validation</text>
+  <text x="1360" y="618" text-anchor="middle" fill="#596462" font-family="Arial, sans-serif" font-size="22">Traçabilité</text>
+</svg>

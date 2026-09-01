@@ -1,21 +1,21 @@
 /* eslint-disable react/no-unescaped-entities, @next/next/no-img-element, @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { featuredProjects, getProject } from "../../projects";
-import { sitePath } from "../../site-config";
-import { LanguageSwitcher } from "../../language-switcher";
+import { englishProjects, getEnglishProject } from "../../../projects-en";
+import { sitePath } from "../../../site-config";
+import { LanguageSwitcher } from "../../../language-switcher";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return featuredProjects.map((project) => ({ slug: project.slug }));
+  return englishProjects.map((project) => ({ slug: project.slug }));
 }
 
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProject(slug);
+  const project = getEnglishProject(slug);
   if (!project) return {};
 
   return {
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: [project.cover.src],
     },
     alternates: {
-      canonical: sitePath(`/projects/${project.slug}/`),
+      canonical: sitePath(`/en/projects/${project.slug}/`),
       languages: { fr: sitePath(`/projects/${project.slug}/`), en: sitePath(`/en/projects/${project.slug}/`) },
     },
   };
@@ -46,44 +46,44 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ProjectPage({ params }: PageProps) {
   const { slug } = await params;
-  const project = getProject(slug);
+  const project = getEnglishProject(slug);
   if (!project) notFound();
 
   return (
     <main className="case-page">
       <header className="topbar case-topbar">
-        <a className="identity" href={sitePath("/")} aria-label="Retour à l'accueil">
+        <a className="identity" href={sitePath("/en/")} aria-label="Back to the homepage">
           <span className="identity-mark" aria-hidden="true">AB</span>
           <span>Adam Berrada</span>
         </a>
-        <nav aria-label="Navigation du projet">
-          <a href={sitePath("/#projets")}>Retour aux projets</a>
-          <a href={project.repository} target="_blank" rel="noreferrer">Dépôt GitHub</a>
-          <LanguageSwitcher locale="fr" alternateHref={sitePath(`/en/projects/${project.slug}/`)} />
+        <nav aria-label="Project navigation">
+          <a href={sitePath("/en/#projects")}>Back to projects</a>
+          <a href={project.repository} target="_blank" rel="noreferrer">GitHub repository</a>
+          <LanguageSwitcher locale="en" alternateHref={sitePath(`/projects/${project.slug}/`)} />
         </nav>
       </header>
 
-      <nav className="case-nav" aria-label="Sommaire de l'étude de cas">
+      <nav className="case-nav" aria-label="Case study contents">
         <span>{project.shortTitle}</span>
-        <a href="#contexte">Contexte</a>
-        <a href="#logique">Logique</a>
-        {project.physicalBuild && <a href="#construction">Construction</a>}
+        <a href="#contexte">Context</a>
+        <a href="#logique">System logic</a>
+        {project.physicalBuild && <a href="#construction">Build</a>}
         <a href="#code">Code</a>
-        <a href="#preuves">Preuves</a>
-        <a href="#bilan">Bilan</a>
+        <a href="#preuves">Evidence</a>
+        <a href="#bilan">Outcome</a>
       </nav>
 
       <article>
         <section className="case-intro">
           <div className="case-intro-copy">
-            <p className="eyebrow">Étude de cas · {project.year}</p>
+            <p className="eyebrow">Case study · {project.year}</p>
             <h1>{project.title}</h1>
             <p>{project.summary}</p>
             <div className="case-actions">
               <a className="button button-primary" href={project.repository} target="_blank" rel="noreferrer">
-                Voir le dépôt GitHub
+                View the GitHub repository
               </a>
-              <a className="text-link" href="#code">Lire les extraits de code ↓</a>
+              <a className="text-link" href="#code">Read the code excerpts ↓</a>
             </div>
           </div>
           <figure className="case-intro-media">
@@ -98,26 +98,26 @@ export default async function ProjectPage({ params }: PageProps) {
             <figcaption>{project.cover.caption}</figcaption>
           </figure>
           <dl className="case-summary-grid">
-            <div><dt>Contexte</dt><dd>{project.context}</dd></div>
-            <div><dt>Mon rôle</dt><dd>{project.role}</dd></div>
-            <div><dt>Résultat</dt><dd>{project.proof}</dd></div>
+            <div><dt>Context</dt><dd>{project.context}</dd></div>
+            <div><dt>My role</dt><dd>{project.role}</dd></div>
+            <div><dt>Outcome</dt><dd>{project.proof}</dd></div>
             <div><dt>Stack</dt><dd>{project.technologies.slice(0, 5).join(" · ")}</dd></div>
           </dl>
         </section>
 
         <section className="case-frame" id="contexte">
           <header>
-            <p className="eyebrow">Cadre du projet</p>
+            <p className="eyebrow">Project framework</p>
             <h2>{project.frame.label}</h2>
             <p>{project.frame.value}</p>
           </header>
           <dl className="frame-list">
             <div><dt>Organisation</dt><dd>{project.frame.organizer}</dd></div>
             <div><dt>Format</dt><dd>{project.frame.format}</dd></div>
-            <div><dt>Brief</dt><dd>{project.frame.brief}</dd></div>
+            <div><dt>Challenge</dt><dd>{project.frame.brief}</dd></div>
           </dl>
           {project.milestones && (
-            <ol className="milestone-list" aria-label="Chronologie du projet">
+            <ol className="milestone-list" aria-label="Project timeline">
               {project.milestones.map((item) => (
                 <li key={item.date}>
                   <time>{item.date}</time>
@@ -128,7 +128,7 @@ export default async function ProjectPage({ params }: PageProps) {
             </ol>
           )}
           {project.distinctions.length > 0 && (
-            <div className="award-list" aria-label="Distinctions">
+            <div className="award-list" aria-label="Awards and milestones">
               {project.distinctions.map((item) => (
                 <article key={item.title}>
                   {item.image ? (
@@ -146,14 +146,14 @@ export default async function ProjectPage({ params }: PageProps) {
                   )}
                   <div>
                     <p className="award-type">
-                      {item.kind === "badge" ? "Badge vérifiable" : item.kind === "award" ? "Récompense" : "Étape du concours"}
+                      {item.kind === "badge" ? "Verifiable badge" : item.kind === "award" ? "Award" : "Competition milestone"}
                     </p>
                     <h3>{item.title}</h3>
                     <p className="award-issuer">{item.issuer}</p>
                     <p>{item.note}</p>
                     {item.credentialUrl && (
                       <a href={item.credentialUrl} target="_blank" rel="noreferrer">
-                        Vérifier le badge <span aria-hidden="true">↗</span>
+                        Verify the badge <span aria-hidden="true">↗</span>
                       </a>
                     )}
                   </div>
@@ -165,11 +165,11 @@ export default async function ProjectPage({ params }: PageProps) {
 
         <section className="problem-section">
           <div>
-            <p className="eyebrow">Question d'ingénierie</p>
+            <p className="eyebrow">Engineering question</p>
             <h2>{project.question}</h2>
           </div>
           <div>
-            <p className="eyebrow">Enjeux</p>
+            <p className="eyebrow">Key challenges</p>
             <ul className="plain-list">
               {project.stakes.map((item) => <li key={item}>{item}</li>)}
             </ul>
@@ -180,7 +180,7 @@ export default async function ProjectPage({ params }: PageProps) {
           <header className="section-split-heading">
             <div>
               <p className="eyebrow">Architecture</p>
-              <h2>Blocs fonctionnels et interfaces.</h2>
+              <h2>Functional blocks and interfaces.</h2>
             </div>
             <p>
               Le système est présenté par blocs fonctionnels. Chaque bloc indique ce qu'il décide et avec quoi il échange.
@@ -197,8 +197,8 @@ export default async function ProjectPage({ params }: PageProps) {
           </dl>
           <div className="logic-layout">
             <div>
-              <p className="eyebrow">Séquence</p>
-              <h3>Ordre d'exécution</h3>
+              <p className="eyebrow">Sequence</p>
+              <h3>Execution order</h3>
             </div>
             <ol className="logic-list">
               {project.systemFlow.map((item, index) => (
@@ -215,7 +215,7 @@ export default async function ProjectPage({ params }: PageProps) {
           <section className="build-section" id="construction" aria-labelledby="build-title">
             <header className="section-split-heading">
               <div>
-                <p className="eyebrow">Construction du bateau</p>
+                <p className="eyebrow">Vessel construction</p>
                 <h2 id="build-title">{project.physicalBuild.title}</h2>
               </div>
               <p>{project.physicalBuild.summary}</p>
@@ -240,7 +240,7 @@ export default async function ProjectPage({ params }: PageProps) {
                     <h3>{stage.title}</h3>
                     <p>{stage.copy}</p>
                     <p className="build-observation">
-                      <strong>Ce que la preuve permet d'affirmer</strong>
+                      <strong>What the evidence supports</strong>
                       {stage.observation}
                     </p>
                   </div>
@@ -250,14 +250,14 @@ export default async function ProjectPage({ params }: PageProps) {
 
             <div className="build-checks">
               <div>
-                <p className="eyebrow">État de validation</p>
-                <h3>Ce qui est construit, simulé ou encore à vérifier.</h3>
+                <p className="eyebrow">Validation status</p>
+                <h3>Built, simulated or still to be verified.</h3>
               </div>
-              <div className="build-check-table" role="table" aria-label="État de validation du prototype physique">
+              <div className="build-check-table" role="table" aria-label="Physical prototype validation status">
                 <div className="build-check-head" role="row">
-                  <span role="columnheader">Sous-système</span>
-                  <span role="columnheader">État</span>
-                  <span role="columnheader">Preuve disponible</span>
+                  <span role="columnheader">Subsystem</span>
+                  <span role="columnheader">Status</span>
+                  <span role="columnheader">Available evidence</span>
                 </div>
                 {project.physicalBuild.checks.map((check) => (
                   <div className="build-check-row" role="row" key={check.subject}>
@@ -273,8 +273,8 @@ export default async function ProjectPage({ params }: PageProps) {
 
         <section className="contribution-section">
           <header>
-            <p className="eyebrow">Contribution personnelle</p>
-            <h2>Mes responsabilités sur le projet.</h2>
+            <p className="eyebrow">Personal contribution</p>
+            <h2>My responsibilities on the project.</h2>
           </header>
           <ol>
             {project.contribution.map((item) => <li key={item}>{item}</li>)}
@@ -284,18 +284,18 @@ export default async function ProjectPage({ params }: PageProps) {
         <section className="constraints-section" aria-labelledby="constraints-title">
           <header className="section-split-heading">
             <div>
-              <p className="eyebrow">Contraintes</p>
-              <h2 id="constraints-title">Problème, réponse, preuve.</h2>
+              <p className="eyebrow">Constraints</p>
+              <h2 id="constraints-title">Problem, response and evidence.</h2>
             </div>
             <p>
               Cette matrice relie chaque décision technique à un élément observable dans le code ou les livrables.
             </p>
           </header>
-          <div className="constraint-table" role="table" aria-label="Contraintes et réponses">
+          <div className="constraint-table" role="table" aria-label="Constraints and engineering responses">
             <div className="constraint-head" role="row">
-              <span role="columnheader">Contrainte</span>
-              <span role="columnheader">Réponse retenue</span>
-              <span role="columnheader">Élément vérifiable</span>
+              <span role="columnheader">Constraint</span>
+              <span role="columnheader">Selected response</span>
+              <span role="columnheader">Verifiable evidence</span>
             </div>
             {project.constraints.map((item) => (
               <div className="constraint-row" role="row" key={item.constraint}>
@@ -310,8 +310,8 @@ export default async function ProjectPage({ params }: PageProps) {
         <section className="code-section" id="code" aria-labelledby="code-title">
           <header className="section-split-heading">
             <div>
-              <p className="eyebrow">Code source</p>
-              <h2 id="code-title">Extraits réels du dépôt.</h2>
+              <p className="eyebrow">Source code</p>
+              <h2 id="code-title">Real excerpts from the repository.</h2>
             </div>
             <p>
               Les extraits sont raccourcis pour la lecture. Chaque bloc renvoie au fichier public complet et précise ce qu'il démontre.
@@ -343,12 +343,12 @@ export default async function ProjectPage({ params }: PageProps) {
 
         <section className="implementation-section">
           <header>
-            <p className="eyebrow">Implémentation</p>
-            <h2>Composants et rôle de chaque choix.</h2>
+            <p className="eyebrow">Implementation</p>
+            <h2>Components and the purpose of each choice.</h2>
           </header>
           <div className="implementation-columns">
             <div>
-              <h3>Matériel et liaisons</h3>
+              <h3>Hardware and interfaces</h3>
               <dl>
                 {project.hardware.map((item) => (
                   <div key={item.label}><dt>{item.label}</dt><dd>{item.value}</dd></div>
@@ -356,7 +356,7 @@ export default async function ProjectPage({ params }: PageProps) {
               </dl>
             </div>
             <div>
-              <h3>Logiciel et modèles</h3>
+              <h3>Software and models</h3>
               <dl>
                 {project.software.map((item) => (
                   <div key={item.label}><dt>{item.label}</dt><dd>{item.value}</dd></div>
@@ -368,8 +368,8 @@ export default async function ProjectPage({ params }: PageProps) {
 
         <section className="decisions-section" aria-labelledby="decisions-title">
           <header>
-            <p className="eyebrow">Décisions d'ingénierie</p>
-            <h2 id="decisions-title">Arbitrages et conséquences.</h2>
+            <p className="eyebrow">Engineering decisions</p>
+            <h2 id="decisions-title">Trade-offs and consequences.</h2>
           </header>
           <div className="decision-list">
             {project.engineering.map((item, index) => (
@@ -387,8 +387,8 @@ export default async function ProjectPage({ params }: PageProps) {
         <section className="evidence-section" id="preuves" aria-labelledby="evidence-title">
           <header className="section-split-heading">
             <div>
-              <p className="eyebrow">Preuves visuelles</p>
-              <h2 id="evidence-title">Prototype, schémas, calculs et résultats.</h2>
+              <p className="eyebrow">Visual evidence</p>
+              <h2 id="evidence-title">Prototype, diagrams, calculations and results.</h2>
             </div>
             <p>{project.evidenceSource}</p>
           </header>
@@ -418,7 +418,7 @@ export default async function ProjectPage({ params }: PageProps) {
                     aria-label={project.video.title}
                   >
                     <source src={project.video.src} type="video/mp4" />
-                    Votre navigateur ne peut pas lire cette vidéo.
+                    Your browser cannot play this video.
                   </video>
                   <figcaption>
                     <strong>{project.video.title}</strong>
@@ -428,7 +428,7 @@ export default async function ProjectPage({ params }: PageProps) {
               )}
               {project.documents && (
                 <div className="document-list">
-                  <p className="eyebrow">Livrables complets</p>
+                  <p className="eyebrow">Complete deliverables</p>
                   {project.documents.map((document) => (
                     <a href={document.href} target="_blank" rel="noreferrer" key={document.href}>
                       <span>
@@ -448,14 +448,14 @@ export default async function ProjectPage({ params }: PageProps) {
 
         <section className="result-section" id="bilan">
           <div className="result-main">
-            <p className="eyebrow">Résultat</p>
+            <p className="eyebrow">Outcome</p>
             <h2>{project.outcome}</h2>
             <ul className="tech-list" aria-label="Technologies">
               {project.technologies.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </div>
           <div className="limit-panel">
-            <p className="eyebrow">Limites actuelles</p>
+            <p className="eyebrow">Current limitations</p>
             <ul className="plain-list">
               {project.limits.map((item) => <li key={item}>{item}</li>)}
             </ul>
@@ -464,31 +464,31 @@ export default async function ProjectPage({ params }: PageProps) {
 
         <section className="lessons-section">
           <div>
-            <p className="eyebrow">Retours d'expérience</p>
-            <h2>Ce que ce projet m'a appris.</h2>
+            <p className="eyebrow">Lessons learned</p>
+            <h2>What this project taught me.</h2>
           </div>
           <ol>
             {project.lessons.map((item) => <li key={item}>{item}</li>)}
           </ol>
           <aside>
-            <p className="eyebrow">Sources utilisées</p>
+            <p className="eyebrow">Sources used</p>
             <ul className="plain-list">
               {project.sources.map((item) => <li key={item}>{item}</li>)}
             </ul>
             <a className="button button-primary" href={project.repository} target="_blank" rel="noreferrer">
-              Consulter le dépôt
+              View the repository
             </a>
           </aside>
         </section>
       </article>
 
       <section className="case-next">
-        <p className="eyebrow">Projet suivant</p>
+        <p className="eyebrow">Next project</p>
         {(() => {
-          const current = featuredProjects.findIndex((item) => item.slug === project.slug);
-          const next = featuredProjects[(current + 1) % featuredProjects.length];
+          const current = englishProjects.findIndex((item) => item.slug === project.slug);
+          const next = englishProjects[(current + 1) % englishProjects.length];
           return (
-            <a href={sitePath(`/projects/${next.slug}/`)}>
+            <a href={sitePath(`/en/projects/${next.slug}/`)}>
               <span>{next.title}</span>
               <span aria-hidden="true">→</span>
             </a>
@@ -497,8 +497,8 @@ export default async function ProjectPage({ params }: PageProps) {
       </section>
 
       <footer className="site-footer">
-        <p>Adam Berrada · Portfolio d'ingénierie</p>
-        <a href={sitePath("/#projets")}>Retour aux projets ↑</a>
+        <p>Adam Berrada · Engineering portfolio</p>
+        <a href={sitePath("/en/#projects")}>Back to projects ↑</a>
       </footer>
     </main>
   );

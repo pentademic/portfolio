@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     apple: sitePath("/apple-touch-icon.png"),
   },
   manifest: sitePath("/manifest.webmanifest"),
+  alternates: {
+    canonical: sitePath("/"),
+    languages: { fr: sitePath("/"), en: sitePath("/en/") },
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

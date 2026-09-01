@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities, @next/next/no-img-element, @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
 import { sitePath } from "../../site-config";
+import { LanguageSwitcher } from "../../language-switcher";
 
 export const metadata: Metadata = {
   title: "Locacoeur et NYXeos",
@@ -16,6 +17,10 @@ export const metadata: Metadata = {
       height: 420,
       alt: "Housse intelligente Guardian de NYXeos pour défibrillateur",
     }],
+  },
+  alternates: {
+    canonical: sitePath("/experience/locacoeur/"),
+    languages: { fr: sitePath("/experience/locacoeur/"), en: sitePath("/en/experience/locacoeur/") },
   },
 };
 
@@ -48,6 +53,7 @@ export default function LocacoeurExperiencePage() {
         <nav aria-label="Navigation de l'expérience">
           <a href={sitePath("/#experience")}>Retour à l'accueil</a>
           <a href="https://fr.linkedin.com/company/locacoeur" target="_blank" rel="noreferrer">Locacoeur sur LinkedIn</a>
+          <LanguageSwitcher locale="fr" alternateHref={sitePath("/en/experience/locacoeur/")} />
         </nav>
       </header>
 

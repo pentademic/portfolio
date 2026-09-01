@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities, @next/next/no-img-element */
 import { featuredProjects } from "./projects";
 import { sitePath } from "./site-config";
+import { LanguageSwitcher } from "./language-switcher";
 
 const expertise = [
   {
@@ -39,6 +40,7 @@ export default function Home() {
           <a href="#expertise">Compétences</a>
           <a href="#profil">Profil</a>
           <a className="topbar-cta" href="https://www.linkedin.com/in/adamberrada" target="_blank" rel="noreferrer">Me contacter</a>
+          <LanguageSwitcher locale="fr" alternateHref={sitePath("/en/")} />
         </nav>
       </header>
 
